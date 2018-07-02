@@ -1,0 +1,10 @@
+<h1>제 홈페이지에 오신분 환영!환영!</h1>
+
+<!-- 로그인 상태 시-->
+<% if user_signed_in? %> <!-- 이제 이걸 따로 정의(구현)하지않고도 사용가능 -->
+    <%= current_user.email %>
+    <%= link_to '로그아웃', destroy_user_session_path, method: "delete" %>
+<% else %>
+<!-- 로그아웃 상태 시 -->
+    <%= link_to '로그인', new_user_session_path %>
+<% end %>
